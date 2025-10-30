@@ -48,4 +48,10 @@ export class Player {
       skill.changeValue(delta);
     }
   }
+
+  public updateSkills(skillChanges: Record<string, number>): void {
+    Object.entries(skillChanges).forEach(([skillName, delta]) => {
+      this.changedSkillValue(skillName, delta);
+    });
+  }
 }
