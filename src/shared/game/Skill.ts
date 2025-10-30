@@ -21,8 +21,12 @@ export class Skill {
   get value(): number {
     return this._value;
   }
-  set value(value: number) {
-    this._value = value;
+  set value(newValue: number) {
+    this._value = Math.max(0, Math.min(10, newValue));
+  }
+
+  public changeValue(delta: number): void {
+    this.value = this._value + delta;
   }
 
   public getPercent(): number {

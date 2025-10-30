@@ -29,4 +29,23 @@ export class Player {
   set name(value: string) {
     this._name = value;
   }
+  get skills(): Skill[] {
+    return Array.from(this._skills.values());
+  }
+
+  public getSkill(skillName: string): Skill | undefined {
+    return this._skills.get(skillName.toLowerCase());
+  }
+  public updateSkillValue(skillName: string, newValue: number): void {
+    const skill = this.getSkill(skillName);
+    if (skill) {
+      skill.value = newValue;
+    }
+  }
+  public changedSkillValue(skillName: string, delta: number): void {
+    const skill = this.getSkill(skillName);
+    if (skill) {
+      skill.changeValue(delta);
+    }
+  }
 }
