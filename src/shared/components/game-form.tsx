@@ -1,37 +1,7 @@
 import { useState } from "react";
 
 import { Player } from "../game/Player";
-
-const quizQuestions = [
-  {
-    id: 1,
-    text: "Ты находишь загадочную тыкву. Твои действия?",
-    answers: [
-      {
-        text: "Изучаю вдоль и поперёк",
-        effect: {
-          ум: 2,
-          харизма: -1,
-        },
-      },
-      {
-        text: "Мелаю дем (делаю мем)",
-        effect: {
-          харизма: 2,
-          популярность: 1,
-        },
-      },
-      {
-        text: "А-а-а-а, тыква! (убежишь)",
-        effect: {
-          харизма: 1,
-          решительность: -2,
-          значимость: -1,
-        },
-      },
-    ],
-  },
-];
+import { quizQuestions } from "../config/quiz-questions";
 
 export function GameForm() {
   const [player, setPlayer] = useState<Player | null>(null);
