@@ -11,18 +11,31 @@
   --content-font: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
 }
 
+html,
+body {
+  color: #fff5ee;
+  font-family: var(--content-font);
+}
+
 header {
+  margin-top: 5rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0;
 
-  color: #fff5ee;
-  font-family: var(--content-font);
+  color: #D56716;
 
+  &>p {
+    font-size: 1.20rem;
+    font-weight: 500;
+  }
 }
 
 h1 {
   font-family: var(--heading-i);
-  font-size: 3.25em;
-  color: #D56716;
+  font-size: 3.7rem;
+  font-weight: 500;
+  line-height: 3.5rem;
 }
