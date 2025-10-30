@@ -48,25 +48,6 @@ export function GameForm() {
     <form onSubmit={handleFormSubmit}>
       {player ? (
         <div className="game-content">
-          <h2>Сладость или гадость, {player.name}?!</h2>
-
-          <div className="skills-preview">
-            {player.skills.map((skill) => (
-              <div key={skill.name} className="skill-item">
-                <span>
-                  {skill.name}: {skill.value}
-                </span>
-                <div className="skill-bar">
-                  <div
-                    className="skill-fill"
-                    style={{ width: `${skill.getPercent()}%` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Вопросы квиза */}
           {currentQuestion < quizQuestions.length ? (
             <div className="quiz-question">
               <h3>{quizQuestions[currentQuestion].text}</h3>
@@ -90,6 +71,23 @@ export function GameForm() {
               {/* Здесь можно показать финальную роль */}
             </div>
           )}
+
+
+          <div className="skills-preview">
+            {player.skills.map((skill) => (
+              <div key={skill.name} className="skill-item">
+                <span>
+                  {skill.name}: {skill.value}
+                </span>
+                <div className="skill-bar">
+                  <div
+                    className="skill-fill"
+                    style={{ width: `${skill.getPercent()}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       ) : (
         <div className="player-setup">

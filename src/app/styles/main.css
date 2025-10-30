@@ -9,11 +9,14 @@
 
   --heading-i: 'Joti One', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   --content-font: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+
+  --color-brand: #D56716;
+  --color-on-brand: #181614;
 }
 
 html,
 body {
-  color: #fff5ee;
+  color: var(--color-on-brand);
   font-family: var(--content-font);
 }
 
@@ -25,7 +28,7 @@ header {
   align-items: center;
   gap: 0;
 
-  color: #D56716;
+  color: var(--color-brand);
 
   &>p {
     font-size: 1.20rem;
@@ -38,4 +41,60 @@ h1 {
   font-size: 3.7rem;
   font-weight: 500;
   line-height: 3.5rem;
+}
+
+button {
+  padding: .5rem 2rem;
+  background-color: var(--color-brand);
+  color: var(--color-on-brand);
+  border: 0;
+  border-radius: .75rem;
+  cursor: pointer;
+}
+
+.game-content {
+  margin: auto 0;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-gap: 20px;
+
+  & button {
+    width: 100%;
+  }
+
+  &>h2 {
+    grid-column: col-start / span 12;
+    text-align: center;
+  }
+
+  &>.skills-preview {
+    grid-column: span 2;
+
+    background-color: var(--color-brand);
+    color: var(--color-on-brand);
+
+
+    padding: 1rem;
+    border: 0;
+    border-radius: .75rem;
+  }
+
+  &>.quiz-question {
+    grid-column: col-start 3 / span 8;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &>.answers {
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      flex-direction: column;
+      gap: .25rem;
+    }
+  }
 }
