@@ -9,7 +9,7 @@ export const quizQuestions = [
       [SKILL_NAMES.CHARISMA]: -1,
       [SKILL_NAMES.POPULARITY]: 0,
       [SKILL_NAMES.DETERMINATION]: 0,
-      [SKILL_NAMES.SIGNIFICANCE]: 0,
+      [SKILL_NAMES.SIGNIFICANCE]: 1,
     }),
     new QuizAnswer("Мелаю дем (делаю мем)", {
       [SKILL_NAMES.INTELLECT]: 0,
@@ -44,14 +44,13 @@ export const quizQuestions = [
     }),
     new QuizAnswer("ЛЮБА!!!", {
       [SKILL_NAMES.INTELLECT]: 2,
-      [SKILL_NAMES.CHARISMA]: -3,
+      [SKILL_NAMES.CHARISMA]: -2,
       [SKILL_NAMES.POPULARITY]: 1,
-      [SKILL_NAMES.DETERMINATION]: 1,
+      [SKILL_NAMES.DETERMINATION]: 2,
       [SKILL_NAMES.SIGNIFICANCE]: 0,
     }),
   ]),
 
-  // Новые вопросы
   new QuizQuestion(3, "В чате Фейри кто-то спрашивает 'скинь ножки'. Твоя реакция?", [
     new QuizAnswer("Игнорирую, это же ловушка!", {
       [SKILL_NAMES.INTELLECT]: 1,
@@ -68,11 +67,11 @@ export const quizQuestions = [
       [SKILL_NAMES.SIGNIFICANCE]: -1,
     }),
     new QuizAnswer("Отправляю Шрека 😏", {
-      [SKILL_NAMES.INTELLECT]: 2,
-      [SKILL_NAMES.CHARISMA]: -2,
-      [SKILL_NAMES.POPULARITY]: -1,
-      [SKILL_NAMES.DETERMINATION]: 1,
-      [SKILL_NAMES.SIGNIFICANCE]: 1,
+      [SKILL_NAMES.INTELLECT]: 1,
+      [SKILL_NAMES.CHARISMA]: 1,
+      [SKILL_NAMES.POPULARITY]: 1,
+      [SKILL_NAMES.DETERMINATION]: 0,
+      [SKILL_NAMES.SIGNIFICANCE]: 0,
     }),
     new QuizAnswer("Банхаммер в руки и вперёд!", {
       [SKILL_NAMES.INTELLECT]: -1,
@@ -100,14 +99,14 @@ export const quizQuestions = [
     }),
     new QuizAnswer("Интересно, как это повлияет на производительность", {
       [SKILL_NAMES.INTELLECT]: 3,
-      [SKILL_NAMES.CHARISMA]: -2,
+      [SKILL_NAMES.CHARISMA]: -1,
       [SKILL_NAMES.POPULARITY]: -1,
       [SKILL_NAMES.DETERMINATION]: 0,
       [SKILL_NAMES.SIGNIFICANCE]: 1,
     }),
     new QuizAnswer("Срочно делаю мем про это!", {
       [SKILL_NAMES.INTELLECT]: -1,
-      [SKILL_NAMES.CHARISMA]: 3,
+      [SKILL_NAMES.CHARISMA]: 2,
       [SKILL_NAMES.POPULARITY]: 2,
       [SKILL_NAMES.DETERMINATION]: 0,
       [SKILL_NAMES.SIGNIFICANCE]: -1,
@@ -116,7 +115,7 @@ export const quizQuestions = [
       [SKILL_NAMES.INTELLECT]: 1,
       [SKILL_NAMES.CHARISMA]: 1,
       [SKILL_NAMES.POPULARITY]: 0,
-      [SKILL_NAMES.DETERMINATION]: -2,
+      [SKILL_NAMES.DETERMINATION]: -1,
       [SKILL_NAMES.SIGNIFICANCE]: 1,
     }),
     new QuizAnswer("А Люба будет?", {
@@ -152,30 +151,30 @@ export const quizQuestions = [
     }),
     new QuizAnswer("Люба с кофе и тасками (очень страшно)", {
       [SKILL_NAMES.INTELLECT]: 1,
-      [SKILL_NAMES.CHARISMA]: -2,
+      [SKILL_NAMES.CHARISMA]: -1,
       [SKILL_NAMES.POPULARITY]: 1,
-      [SKILL_NAMES.DETERMINATION]: 3,
+      [SKILL_NAMES.DETERMINATION]: 2,
       [SKILL_NAMES.SIGNIFICANCE]: 2,
     }),
     new QuizAnswer("Не пойду, надо баги фиксить", {
       [SKILL_NAMES.INTELLECT]: 2,
-      [SKILL_NAMES.CHARISMA]: -3,
+      [SKILL_NAMES.CHARISMA]: -2,
       [SKILL_NAMES.POPULARITY]: -2,
       [SKILL_NAMES.DETERMINATION]: 2,
       [SKILL_NAMES.SIGNIFICANCE]: 0,
     }),
     new QuizAnswer("А? Я уже играю!", {
       [SKILL_NAMES.INTELLECT]: 1,
-      [SKILL_NAMES.CHARISMA]: 3,
+      [SKILL_NAMES.CHARISMA]: 2,
       [SKILL_NAMES.POPULARITY]: 1,
       [SKILL_NAMES.DETERMINATION]: 1,
-      [SKILL_NAMES.SIGNIFICANCE]: 2,
+      [SKILL_NAMES.SIGNIFICANCE]: 1,
     }),
   ]),
 
   new QuizQuestion(6, "Обнаружил критический баг в продакшене. Время действий!", [
     new QuizAnswer("Как разработчик —— срочно пушим фиксы без код-ревью", {
-      [SKILL_NAMES.INTELLECT]: -2,
+      [SKILL_NAMES.INTELLECT]: -1,
       [SKILL_NAMES.CHARISMA]: 0,
       [SKILL_NAMES.POPULARITY]: -1,
       [SKILL_NAMES.DETERMINATION]: 3,
@@ -186,7 +185,7 @@ export const quizQuestions = [
       [SKILL_NAMES.CHARISMA]: 2,
       [SKILL_NAMES.POPULARITY]: 1,
       [SKILL_NAMES.DETERMINATION]: 1,
-      [SKILL_NAMES.SIGNIFICANCE]: 2,
+      [SKILL_NAMES.SIGNIFICANCE]: 1,
     }),
     new QuizAnswer("Делаю вид, что не заметил", {
       [SKILL_NAMES.INTELLECT]: -1,
@@ -373,5 +372,67 @@ export const quizQuestions = [
       [SKILL_NAMES.POPULARITY]: 1,
       [SKILL_NAMES.DETERMINATION]: -2,
       [SKILL_NAMES.SIGNIFICANCE]: -3,
-    }),])
+    }),]),
+
+  new QuizQuestion(11, "Ты получаешь магическую силу. Как её используешь?", [
+    new QuizAnswer("Становлюсь самым умным существом", {
+      [SKILL_NAMES.INTELLECT]: 3,
+      [SKILL_NAMES.CHARISMA]: -1,
+      [SKILL_NAMES.POPULARITY]: 0,
+      [SKILL_NAMES.DETERMINATION]: 1,
+      [SKILL_NAMES.SIGNIFICANCE]: 2,
+    }),
+    new QuizAnswer("Делаю всех счастливыми", {
+      [SKILL_NAMES.INTELLECT]: 0,
+      [SKILL_NAMES.CHARISMA]: 3,
+      [SKILL_NAMES.POPULARITY]: 2,
+      [SKILL_NAMES.DETERMINATION]: 0,
+      [SKILL_NAMES.SIGNIFICANCE]: 1,
+    }),
+    new QuizAnswer("Становлюсь лидером Фейри", {
+      [SKILL_NAMES.INTELLECT]: 1,
+      [SKILL_NAMES.CHARISMA]: 1,
+      [SKILL_NAMES.POPULARITY]: 2,
+      [SKILL_NAMES.DETERMINATION]: 2,
+      [SKILL_NAMES.SIGNIFICANCE]: 3,
+    }),
+    new QuizAnswer("Создаю идеальный мем", {
+      [SKILL_NAMES.INTELLECT]: 1,
+      [SKILL_NAMES.CHARISMA]: 2,
+      [SKILL_NAMES.POPULARITY]: 3,
+      [SKILL_NAMES.DETERMINATION]: 0,
+      [SKILL_NAMES.SIGNIFICANCE]: 0,
+    }),
+  ]),
+
+  new QuizQuestion(12, "Твоя сверхспособность в Фейри?", [
+    new QuizAnswer("Мгновенно фиксить баги", {
+      [SKILL_NAMES.INTELLECT]: 2,
+      [SKILL_NAMES.CHARISMA]: 0,
+      [SKILL_NAMES.POPULARITY]: 1,
+      [SKILL_NAMES.DETERMINATION]: 2,
+      [SKILL_NAMES.SIGNIFICANCE]: 1,
+    }),
+    new QuizAnswer("Всегда быть в центре внимания", {
+      [SKILL_NAMES.INTELLECT]: 0,
+      [SKILL_NAMES.CHARISMA]: 2,
+      [SKILL_NAMES.POPULARITY]: 3,
+      [SKILL_NAMES.DETERMINATION]: 0,
+      [SKILL_NAMES.SIGNIFICANCE]: 1,
+    }),
+    new QuizAnswer("Понимать чувства каждого", {
+      [SKILL_NAMES.INTELLECT]: 1,
+      [SKILL_NAMES.CHARISMA]: 3,
+      [SKILL_NAMES.POPULARITY]: 1,
+      [SKILL_NAMES.DETERMINATION]: 1,
+      [SKILL_NAMES.SIGNIFICANCE]: 0,
+    }),
+    new QuizAnswer("Никогда не сдаваться", {
+      [SKILL_NAMES.INTELLECT]: 1,
+      [SKILL_NAMES.CHARISMA]: 0,
+      [SKILL_NAMES.POPULARITY]: 0,
+      [SKILL_NAMES.DETERMINATION]: 3,
+      [SKILL_NAMES.SIGNIFICANCE]: 2,
+    }),
+  ]),
 ];
