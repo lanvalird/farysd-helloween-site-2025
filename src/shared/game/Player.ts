@@ -7,7 +7,7 @@ import { SKILL_NAMES } from "../config/constants";
 
 export class Player {
   private _currentRole: GameRole | null = null;
-  
+
   protected _name: string = "Spooky Gamer";
   protected _skills: Map<string, Skill> = new Map();
 

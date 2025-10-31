@@ -1,7 +1,6 @@
 import { GameForm } from "../shared/components/game-form";
 
 function App() {
-
   return (
     <>
       <header>
@@ -11,7 +10,7 @@ function App() {
 
       <GameForm />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

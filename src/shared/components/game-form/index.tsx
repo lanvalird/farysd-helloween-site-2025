@@ -47,11 +47,11 @@ function GameContent({ player }: { player: Player }) {
     if (currentQuestion < quizQuestions.length) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      console.log('Greate! You are done >:)')
+      console.log("Greate! You are done >:)");
     }
   }
 
-const playerRole = useMemo(() => {
+  const playerRole = useMemo(() => {
     if (currentQuestion >= quizQuestions.length) {
       return roleSystem.calculateRole(player);
     }
@@ -61,15 +61,14 @@ const playerRole = useMemo(() => {
   const showResults = currentQuestion >= quizQuestions.length;
 
   return (
-    <div className='game-content'>
+    <div className="game-content">
       {!showResults ? (
         <QuizQuestion
           value={quizQuestions[currentQuestion]}
           handleAnswer={handleAnswer}
         />
       ) : (
-                <QuizComplete player={player} role={playerRole} />
-
+        <QuizComplete player={player} role={playerRole} />
       )}
 
       <SkillsPreview player={player} />
@@ -79,24 +78,24 @@ const playerRole = useMemo(() => {
 
 function WelcomeScreen() {
   return (
-    <div className='player-setup'>
-      <input type='text' name='name' placeholder='Ваше имя' required />
-      <button type='submit'>Начать игру!</button>
+    <div className="player-setup">
+      <input type="text" name="name" placeholder="Ваше имя" required />
+      <button type="submit">Начать игру!</button>
     </div>
   );
 }
 
 function SkillsPreview({ player }: { player: Player }) {
   return (
-    <div className='skills-preview'>
+    <div className="skills-preview">
       {player.skills.map((skill) => (
-        <div key={skill.name} className='skill-item'>
+        <div key={skill.name} className="skill-item">
           <span>
             {skill.name}: {skill.value}
           </span>
-          <div className='skill-bar'>
+          <div className="skill-bar">
             <div
-              className='skill-fill'
+              className="skill-fill"
               style={{ width: `${skill.getPercent()}%` }}
             />
           </div>
@@ -114,15 +113,15 @@ function QuizQuestion({
   handleAnswer: (effect: SkillEffect) => void;
 }) {
   return (
-    <div className='quiz-question'>
+    <div className="quiz-question">
       <h3>{value.text}</h3>
-      <div className='answers'>
+      <div className="answers">
         {value.answers.map((answer, index) => (
           <button
             key={index}
-            type='button'
+            type="button"
             onClick={() => handleAnswer(answer.effect)}
-            className='answer-button'
+            className="answer-button"
           >
             {answer.text}
           </button>
@@ -132,11 +131,11 @@ function QuizQuestion({
   );
 }
 
-function QuizComplete({ 
-  player, 
-  role 
-}: { 
-  player: Player; 
+function QuizComplete({
+  player,
+  role,
+}: {
+  player: Player;
   role: GameRole | null;
 }) {
   const finalRole = role;
@@ -144,23 +143,28 @@ function QuizComplete({
   const matchingRoles = useMemo(() => {
     const allRoles = roleSystem.getAllRoles();
     const scored = allRoles
-      .map(r => ({
+      .map((r) => ({
         role: r,
         score: (roleSystem as any).calculateRoleScore(player, r),
-        meets: (roleSystem as any).meetsHardRequirements(player, r.hardRequirements)
+        meets: (roleSystem as any).meetsHardRequirements(
+          player,
+          r.hardRequirements,
+        ),
       }))
-      .filter(item => item.meets)
+      .filter((item) => item.meets)
       .sort((a, b) => b.score - a.score)
       .slice(0, 3);
-    return scored.map(item => item.role);
+    return scored.map((item) => item.role);
   }, [player]);
 
   return (
-    <div className='quiz-complete'>
+    <div className="quiz-complete">
       <h3>🎉 Квиз завершен! 🎉</h3>
-      
+
       <div className="role-result">
-        <h4>{player.name}, ты — {finalRole?.name}!</h4>
+        <h4>
+          {player.name}, ты — {finalRole?.name}!
+        </h4>
         <p className="role-description">{finalRole?.description}</p>
         {finalRole?.category && (
           <p className="role-category">Категория: {finalRole.category}</p>

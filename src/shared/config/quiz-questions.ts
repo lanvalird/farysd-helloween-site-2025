@@ -51,81 +51,89 @@ export const quizQuestions = [
     }),
   ]),
 
-  new QuizQuestion(3, "В чате Фейри кто-то спрашивает 'скинь ножки'. Твоя реакция?", [
-    new QuizAnswer("Игнорирую, это же ловушка!", {
-      [SKILL_NAMES.INTELLECT]: 1,
-      [SKILL_NAMES.CHARISMA]: -1,
-      [SKILL_NAMES.POPULARITY]: -1,
-      [SKILL_NAMES.DETERMINATION]: 2,
-      [SKILL_NAMES.SIGNIFICANCE]: 0,
-    }),
-    new QuizAnswer("Отправляю фото куриных ножек", {
-      [SKILL_NAMES.INTELLECT]: 0,
-      [SKILL_NAMES.CHARISMA]: 3,
-      [SKILL_NAMES.POPULARITY]: 2,
-      [SKILL_NAMES.DETERMINATION]: 0,
-      [SKILL_NAMES.SIGNIFICANCE]: -1,
-    }),
-    new QuizAnswer("Отправляю Шрека 😏", {
-      [SKILL_NAMES.INTELLECT]: 1,
-      [SKILL_NAMES.CHARISMA]: 1,
-      [SKILL_NAMES.POPULARITY]: 1,
-      [SKILL_NAMES.DETERMINATION]: 0,
-      [SKILL_NAMES.SIGNIFICANCE]: 0,
-    }),
-    new QuizAnswer("Банхаммер в руки и вперёд!", {
-      [SKILL_NAMES.INTELLECT]: -1,
-      [SKILL_NAMES.CHARISMA]: 0,
-      [SKILL_NAMES.POPULARITY]: 1,
-      [SKILL_NAMES.DETERMINATION]: 3,
-      [SKILL_NAMES.SIGNIFICANCE]: 2,
-    }),
-  ]),
+  new QuizQuestion(
+    3,
+    "В чате Фейри кто-то спрашивает 'скинь ножки'. Твоя реакция?",
+    [
+      new QuizAnswer("Игнорирую, это же ловушка!", {
+        [SKILL_NAMES.INTELLECT]: 1,
+        [SKILL_NAMES.CHARISMA]: -1,
+        [SKILL_NAMES.POPULARITY]: -1,
+        [SKILL_NAMES.DETERMINATION]: 2,
+        [SKILL_NAMES.SIGNIFICANCE]: 0,
+      }),
+      new QuizAnswer("Отправляю фото куриных ножек", {
+        [SKILL_NAMES.INTELLECT]: 0,
+        [SKILL_NAMES.CHARISMA]: 3,
+        [SKILL_NAMES.POPULARITY]: 2,
+        [SKILL_NAMES.DETERMINATION]: 0,
+        [SKILL_NAMES.SIGNIFICANCE]: -1,
+      }),
+      new QuizAnswer("Отправляю Шрека 😏", {
+        [SKILL_NAMES.INTELLECT]: 1,
+        [SKILL_NAMES.CHARISMA]: 1,
+        [SKILL_NAMES.POPULARITY]: 1,
+        [SKILL_NAMES.DETERMINATION]: 0,
+        [SKILL_NAMES.SIGNIFICANCE]: 0,
+      }),
+      new QuizAnswer("Банхаммер в руки и вперёд!", {
+        [SKILL_NAMES.INTELLECT]: -1,
+        [SKILL_NAMES.CHARISMA]: 0,
+        [SKILL_NAMES.POPULARITY]: 1,
+        [SKILL_NAMES.DETERMINATION]: 3,
+        [SKILL_NAMES.SIGNIFICANCE]: 2,
+      }),
+    ],
+  ),
 
-  new QuizQuestion(4, "Ты видишь, как Фокус-Покус превращается в тянку. Твои мысли?", [
-    new QuizAnswer("Нормально же общались...", {
-      [SKILL_NAMES.INTELLECT]: 1,
-      [SKILL_NAMES.CHARISMA]: -1,
-      [SKILL_NAMES.POPULARITY]: 0,
-      [SKILL_NAMES.DETERMINATION]: -1,
-      [SKILL_NAMES.SIGNIFICANCE]: 0,
-    }),
-    new QuizAnswer("Давно пора!", {
-      [SKILL_NAMES.INTELLECT]: 0,
-      [SKILL_NAMES.CHARISMA]: 2,
-      [SKILL_NAMES.POPULARITY]: 1,
-      [SKILL_NAMES.DETERMINATION]: 1,
-      [SKILL_NAMES.SIGNIFICANCE]: 0,
-    }),
-    new QuizAnswer("Интересно, как это повлияет на производительность", {
-      [SKILL_NAMES.INTELLECT]: 3,
-      [SKILL_NAMES.CHARISMA]: -1,
-      [SKILL_NAMES.POPULARITY]: -1,
-      [SKILL_NAMES.DETERMINATION]: 0,
-      [SKILL_NAMES.SIGNIFICANCE]: 1,
-    }),
-    new QuizAnswer("Срочно делаю мем про это!", {
-      [SKILL_NAMES.INTELLECT]: -1,
-      [SKILL_NAMES.CHARISMA]: 2,
-      [SKILL_NAMES.POPULARITY]: 2,
-      [SKILL_NAMES.DETERMINATION]: 0,
-      [SKILL_NAMES.SIGNIFICANCE]: -1,
-    }),
-    new QuizAnswer("Надо спросить у Вали, что происходит", {
-      [SKILL_NAMES.INTELLECT]: 1,
-      [SKILL_NAMES.CHARISMA]: 1,
-      [SKILL_NAMES.POPULARITY]: 0,
-      [SKILL_NAMES.DETERMINATION]: -1,
-      [SKILL_NAMES.SIGNIFICANCE]: 1,
-    }),
-    new QuizAnswer("А Люба будет?", {
-      [SKILL_NAMES.INTELLECT]: -1,
-      [SKILL_NAMES.CHARISMA]: 2,
-      [SKILL_NAMES.POPULARITY]: 1,
-      [SKILL_NAMES.DETERMINATION]: -1,
-      [SKILL_NAMES.SIGNIFICANCE]: 1,
-    }),
-  ]),
+  new QuizQuestion(
+    4,
+    "Ты видишь, как Фокус-Покус превращается в тянку. Твои мысли?",
+    [
+      new QuizAnswer("Нормально же общались...", {
+        [SKILL_NAMES.INTELLECT]: 1,
+        [SKILL_NAMES.CHARISMA]: -1,
+        [SKILL_NAMES.POPULARITY]: 0,
+        [SKILL_NAMES.DETERMINATION]: -1,
+        [SKILL_NAMES.SIGNIFICANCE]: 0,
+      }),
+      new QuizAnswer("Давно пора!", {
+        [SKILL_NAMES.INTELLECT]: 0,
+        [SKILL_NAMES.CHARISMA]: 2,
+        [SKILL_NAMES.POPULARITY]: 1,
+        [SKILL_NAMES.DETERMINATION]: 1,
+        [SKILL_NAMES.SIGNIFICANCE]: 0,
+      }),
+      new QuizAnswer("Интересно, как это повлияет на производительность", {
+        [SKILL_NAMES.INTELLECT]: 3,
+        [SKILL_NAMES.CHARISMA]: -1,
+        [SKILL_NAMES.POPULARITY]: -1,
+        [SKILL_NAMES.DETERMINATION]: 0,
+        [SKILL_NAMES.SIGNIFICANCE]: 1,
+      }),
+      new QuizAnswer("Срочно делаю мем про это!", {
+        [SKILL_NAMES.INTELLECT]: -1,
+        [SKILL_NAMES.CHARISMA]: 2,
+        [SKILL_NAMES.POPULARITY]: 2,
+        [SKILL_NAMES.DETERMINATION]: 0,
+        [SKILL_NAMES.SIGNIFICANCE]: -1,
+      }),
+      new QuizAnswer("Надо спросить у Вали, что происходит", {
+        [SKILL_NAMES.INTELLECT]: 1,
+        [SKILL_NAMES.CHARISMA]: 1,
+        [SKILL_NAMES.POPULARITY]: 0,
+        [SKILL_NAMES.DETERMINATION]: -1,
+        [SKILL_NAMES.SIGNIFICANCE]: 1,
+      }),
+      new QuizAnswer("А Люба будет?", {
+        [SKILL_NAMES.INTELLECT]: -1,
+        [SKILL_NAMES.CHARISMA]: 2,
+        [SKILL_NAMES.POPULARITY]: 1,
+        [SKILL_NAMES.DETERMINATION]: -1,
+        [SKILL_NAMES.SIGNIFICANCE]: 1,
+      }),
+    ],
+  ),
 
   new QuizQuestion(5, "Хэллоуинская вечеринка в Фейри. Твой костюм?", [
     new QuizAnswer("Классическая тыква", {
@@ -172,43 +180,47 @@ export const quizQuestions = [
     }),
   ]),
 
-  new QuizQuestion(6, "Обнаружил критический баг в продакшене. Время действий!", [
-    new QuizAnswer("Как разработчик —— срочно пушим фиксы без код-ревью", {
-      [SKILL_NAMES.INTELLECT]: -1,
-      [SKILL_NAMES.CHARISMA]: 0,
-      [SKILL_NAMES.POPULARITY]: -1,
-      [SKILL_NAMES.DETERMINATION]: 3,
-      [SKILL_NAMES.SIGNIFICANCE]: 1,
-    }),
-    new QuizAnswer("АДМИНЫ, ВЫ ГДЕ, ТУТ БЯКА", {
-      [SKILL_NAMES.INTELLECT]: -1,
-      [SKILL_NAMES.CHARISMA]: 2,
-      [SKILL_NAMES.POPULARITY]: 1,
-      [SKILL_NAMES.DETERMINATION]: 1,
-      [SKILL_NAMES.SIGNIFICANCE]: 1,
-    }),
-    new QuizAnswer("Делаю вид, что не заметил", {
-      [SKILL_NAMES.INTELLECT]: -1,
-      [SKILL_NAMES.CHARISMA]: 1,
-      [SKILL_NAMES.POPULARITY]: -2,
-      [SKILL_NAMES.DETERMINATION]: -3,
-      [SKILL_NAMES.SIGNIFICANCE]: -2,
-    }),
-    new QuizAnswer("Круто и нудно пишу, почему и как исправить баг", {
-      [SKILL_NAMES.INTELLECT]: 3,
-      [SKILL_NAMES.CHARISMA]: -1,
-      [SKILL_NAMES.POPULARITY]: -1,
-      [SKILL_NAMES.DETERMINATION]: 0,
-      [SKILL_NAMES.SIGNIFICANCE]: 1,
-    }),
-    new QuizAnswer("Виноват Валя!", {
-      [SKILL_NAMES.INTELLECT]: -2,
-      [SKILL_NAMES.CHARISMA]: 0,
-      [SKILL_NAMES.POPULARITY]: -1,
-      [SKILL_NAMES.DETERMINATION]: -1,
-      [SKILL_NAMES.SIGNIFICANCE]: -1,
-    }),
-  ]),
+  new QuizQuestion(
+    6,
+    "Обнаружил критический баг в продакшене. Время действий!",
+    [
+      new QuizAnswer("Как разработчик —— срочно пушим фиксы без код-ревью", {
+        [SKILL_NAMES.INTELLECT]: -1,
+        [SKILL_NAMES.CHARISMA]: 0,
+        [SKILL_NAMES.POPULARITY]: -1,
+        [SKILL_NAMES.DETERMINATION]: 3,
+        [SKILL_NAMES.SIGNIFICANCE]: 1,
+      }),
+      new QuizAnswer("АДМИНЫ, ВЫ ГДЕ, ТУТ БЯКА", {
+        [SKILL_NAMES.INTELLECT]: -1,
+        [SKILL_NAMES.CHARISMA]: 2,
+        [SKILL_NAMES.POPULARITY]: 1,
+        [SKILL_NAMES.DETERMINATION]: 1,
+        [SKILL_NAMES.SIGNIFICANCE]: 1,
+      }),
+      new QuizAnswer("Делаю вид, что не заметил", {
+        [SKILL_NAMES.INTELLECT]: -1,
+        [SKILL_NAMES.CHARISMA]: 1,
+        [SKILL_NAMES.POPULARITY]: -2,
+        [SKILL_NAMES.DETERMINATION]: -3,
+        [SKILL_NAMES.SIGNIFICANCE]: -2,
+      }),
+      new QuizAnswer("Круто и нудно пишу, почему и как исправить баг", {
+        [SKILL_NAMES.INTELLECT]: 3,
+        [SKILL_NAMES.CHARISMA]: -1,
+        [SKILL_NAMES.POPULARITY]: -1,
+        [SKILL_NAMES.DETERMINATION]: 0,
+        [SKILL_NAMES.SIGNIFICANCE]: 1,
+      }),
+      new QuizAnswer("Виноват Валя!", {
+        [SKILL_NAMES.INTELLECT]: -2,
+        [SKILL_NAMES.CHARISMA]: 0,
+        [SKILL_NAMES.POPULARITY]: -1,
+        [SKILL_NAMES.DETERMINATION]: -1,
+        [SKILL_NAMES.SIGNIFICANCE]: -1,
+      }),
+    ],
+  ),
 
   new QuizQuestion(7, "Фейри внезапно закрывается. Твоя первая реакция?", [
     new QuizAnswer("Бегу спасать родной мой Фейри!", {
@@ -335,7 +347,8 @@ export const quizQuestions = [
       [SKILL_NAMES.POPULARITY]: 1,
       [SKILL_NAMES.DETERMINATION]: -2,
       [SKILL_NAMES.SIGNIFICANCE]: -3,
-    }),]),
+    }),
+  ]),
 
   new QuizQuestion(10, "Самый главный вопрос — кого бы ты выбрал?", [
     new QuizAnswer("Валя, иди сюда!", {
@@ -372,7 +385,8 @@ export const quizQuestions = [
       [SKILL_NAMES.POPULARITY]: 1,
       [SKILL_NAMES.DETERMINATION]: -2,
       [SKILL_NAMES.SIGNIFICANCE]: -3,
-    }),]),
+    }),
+  ]),
 
   new QuizQuestion(11, "Ты получаешь магическую силу. Как её используешь?", [
     new QuizAnswer("Становлюсь самым умным существом", {

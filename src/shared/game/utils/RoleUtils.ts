@@ -27,23 +27,26 @@ export class RoleUtils {
       });
     }
 
-    return requirements.length > 0 ? requirements.join(', ') : 'Нет требований';
+    return requirements.length > 0 ? requirements.join(", ") : "Нет требований";
   }
 
   public static getMatchingRoles(player: any, limit: number = 3): GameRole[] {
     const roleSystem = RoleSystem.getInstance();
     const allRoles = roleSystem.getAllRoles();
-    
+
     const scoredRoles = allRoles
-      .map(role => ({
+      .map((role) => ({
         role,
-        score: roleSystem['calculateRoleScore'](player, role),
-        meetsRequirements: roleSystem['meetsHardRequirements'](player, role.hardRequirements)
+        score: roleSystem["calculateRoleScore"](player, role),
+        meetsRequirements: roleSystem["meetsHardRequirements"](
+          player,
+          role.hardRequirements,
+        ),
       }))
-      .filter(item => item.meetsRequirements)
+      .filter((item) => item.meetsRequirements)
       .sort((a, b) => b.score - a.score)
       .slice(0, limit);
 
-    return scoredRoles.map(item => item.role);
+    return scoredRoles.map((item) => item.role);
   }
 }
