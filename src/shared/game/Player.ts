@@ -1,8 +1,13 @@
+import type { GameRole } from "../types";
+
 import { Skill } from "./Skill";
+import { RoleSystem } from "./RoleSystem";
 
 import { SKILL_NAMES } from "../config/constants";
 
 export class Player {
+  private _currentRole: GameRole | null = null;
+  
   protected _name: string = "Spooky Gamer";
   protected _skills: Map<string, Skill> = new Map();
 
@@ -55,5 +60,27 @@ export class Player {
     Object.entries(skillChanges).forEach(([skillName, delta]) => {
       this.changedSkillValue(skillName, delta);
     });
+  }
+
+  public calculateRole(): GameRole {
+    const roleSystem = RoleSystem.getInstance();
+    this._currentRole = roleSystem.calculateRole(this);
+    return this._currentRole;
+  }
+
+  public get currentRole(): GameRole | null {
+    if (!this._currentRole) {
+      this.calculateRole();
+    }
+    return this._currentRole;
+  }
+
+  public set currentRole(role: GameRole) {
+    this._currentRole = role;
+  }
+
+  public recalculateRole(): void {
+    this._currentRole = null;
+    this.calculateRole();
   }
 }

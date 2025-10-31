@@ -143,3 +143,82 @@ button {
     }
   }
 }
+
+/* Новые стили для системы ролей */
+.quiz-complete {
+  text-align: center;
+  width: 100%;
+  
+  .role-result {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 170, 110, 0.25);
+    border-radius: 1rem;
+    
+    h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-brand);
+    }
+    
+    .role-description {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      color: var(--color-on-brand);
+    }
+    
+    .role-category {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      color: var(--color-on-brand);
+    }
+  }
+  
+  .alternative-roles {
+    margin: 1.5rem 0;
+    
+    h5 {
+      margin-bottom: 1rem;
+      color: var(--color-brand);
+    }
+    
+    .alternative-role {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      background: rgba(213, 103, 22, 0.05);
+      border-radius: 0.5rem;
+      color: var(--color-on-brand);
+    }
+  }
+  
+  .role-stats {
+    margin-top: 2rem;
+    
+    h5 {
+      margin-bottom: 1rem;
+      color: var(--color-brand);
+    }
+    
+    .skill-result {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0.5rem 0;
+      color: var(--color-on-brand);
+      
+      .skill-bar {
+        width: 60%;
+        height: 0.5rem;
+        background: rgba(24, 22, 20, 0.2);
+        border-radius: 0.25rem;
+        overflow: hidden;
+        
+        .skill-fill {
+          height: 100%;
+          background: var(--color-brand);
+          transition: width 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+}

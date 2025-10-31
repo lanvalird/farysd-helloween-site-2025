@@ -1,11 +1,12 @@
-import type { SkillEffect } from "../../types";
+import type { GameRole, SkillEffect } from "../../types";
 import type { QuizQuestion as QuizQuestionClass } from "../../game/qiuz/Question";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Player } from "../../game/Player";
 
 import { quizQuestions } from "../../config/quiz-questions";
+import { RoleSystem } from "../../game/RoleSystem";
 
 export function GameForm() {
   const [player, setPlayer] = useState<Player | null>(null);
@@ -30,6 +31,7 @@ export function GameForm() {
 
 function GameContent({ player }: { player: Player }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const roleSystem = RoleSystem.getInstance();
 
   function handleAnswer(effect: SkillEffect) {
     if (!player) return;
@@ -42,28 +44,32 @@ function GameContent({ player }: { player: Player }) {
   function nextQuizQuestion() {
     if (!player) return;
 
-    if (currentQuestion < quizQuestions.length - 1) {
+    if (currentQuestion < quizQuestions.length) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      setCurrentQuestion(-1);
+      console.log('Greate! You are done >:)')
     }
   }
 
+const playerRole = useMemo(() => {
+    if (currentQuestion >= quizQuestions.length) {
+      return roleSystem.calculateRole(player);
+    }
+    return null;
+  }, [currentQuestion, player]);
+
+  const showResults = currentQuestion >= quizQuestions.length;
+
   return (
     <div className='game-content'>
-      {currentQuestion !== -1 ? (
+      {!showResults ? (
         <QuizQuestion
           value={quizQuestions[currentQuestion]}
           handleAnswer={handleAnswer}
         />
       ) : (
-        <div className='quiz-complete'>
-          <h3>🎉 Квиз завершен! 🎉</h3>
-          <p>
-            {player.name}, ты теперь «официально» — {/* Финальная роль */}{" "}
-            Ромашка
-          </p>
-        </div>
+                <QuizComplete player={player} role={playerRole} />
+
       )}
 
       <SkillsPreview player={player} />
@@ -122,6 +128,55 @@ function QuizQuestion({
           </button>
         ))}
       </div>
+    </div>
+  );
+}
+
+function QuizComplete({ 
+  player, 
+  role 
+}: { 
+  player: Player; 
+  role: GameRole | null;
+}) {
+  const finalRole = role;
+  const roleSystem = RoleSystem.getInstance();
+  const matchingRoles = useMemo(() => {
+    const allRoles = roleSystem.getAllRoles();
+    const scored = allRoles
+      .map(r => ({
+        role: r,
+        score: (roleSystem as any).calculateRoleScore(player, r),
+        meets: (roleSystem as any).meetsHardRequirements(player, r.hardRequirements)
+      }))
+      .filter(item => item.meets)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3);
+    return scored.map(item => item.role);
+  }, [player]);
+
+  return (
+    <div className='quiz-complete'>
+      <h3>🎉 Квиз завершен! 🎉</h3>
+      
+      <div className="role-result">
+        <h4>{player.name}, ты — {finalRole?.name}!</h4>
+        <p className="role-description">{finalRole?.description}</p>
+        {finalRole?.category && (
+          <p className="role-category">Категория: {finalRole.category}</p>
+        )}
+      </div>
+
+      {matchingRoles.length > 1 && (
+        <div className="alternative-roles">
+          <h5>Другие подходящие роли:</h5>
+          {matchingRoles.slice(1).map((role, index) => (
+            <div key={role.id} className="alternative-role">
+              {index + 1}. {role.name} - {role.description}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
