@@ -222,3 +222,86 @@ button {
     }
   }
 }
+@media (max-width: 768px) {
+  header {
+    margin-top: 1.5rem;
+    
+    &>p {
+      font-size: 0.9rem;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+
+  .game-content {
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    padding: 0.5rem;
+
+    &>.skills-preview {
+      grid-column: 1;
+      order: 2; /* Перемещаем навыки вниз на мобильных */
+    }
+
+    &>.quiz-question,
+    .quiz-complete {
+      grid-column: 1;
+      order: 1; /* Вопросы идут первыми */
+    }
+  }
+
+  .quiz-complete {
+    .role-result {
+      margin: 1rem 0;
+      padding: 1rem;
+      
+      h4 {
+        font-size: 1.3rem;
+      }
+    }
+    
+    .role-stats .skill-result {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+      
+      .skill-bar {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.game-content > * {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.answer-button {
+  animation: fadeIn 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  button {
+    min-height: 44px;
+    
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
