@@ -1,21 +1,23 @@
 import { Skill } from "./Skill";
 
+import { SKILL_NAMES } from "../config/constants";
+
 export class Player {
   protected _name: string = "Spooky Gamer";
   protected _skills: Map<string, Skill> = new Map();
 
   constructor(name?: string) {
-    name && (this._name = name);
+    if (name) this._name = name;
     this.initializeSkills();
   }
 
   private initializeSkills(): void {
     const defaultSkills: Skill[] = [
-      new Skill("Ум", "Интеллект и эрудиция", 5),
-      new Skill("Харизма", "Юмор и обаяние", 5),
-      new Skill("Значимость", "Важность и влияние", 5),
-      new Skill("Популярность", "Активность и известность", 5),
-      new Skill("Решительность", "Страсть и уверенность", 5),
+      new Skill(SKILL_NAMES.INTELLECT, "Интеллект и эрудиция", 5),
+      new Skill(SKILL_NAMES.CHARISMA, "Юмор и обаяние", 5),
+      new Skill(SKILL_NAMES.SIGNIFICANCE, "Важность и влияние", 5),
+      new Skill(SKILL_NAMES.POPULARITY, "Активность и известность", 5),
+      new Skill(SKILL_NAMES.DETERMINATION, "Страсть и уверенность", 5),
     ];
 
     defaultSkills.forEach((skill) => {

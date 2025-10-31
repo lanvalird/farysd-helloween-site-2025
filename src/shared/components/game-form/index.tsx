@@ -1,3 +1,6 @@
+import type { SkillEffect } from "../../types";
+import type { QuizQuestion as QuizQuestionClass } from "../../game/qiuz/Question";
+
 import { useState } from "react";
 
 import { Player } from "../../game/Player";
@@ -20,36 +23,18 @@ export function GameForm() {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      {player ? (
-        <GameContent player={player} setPlayer={setPlayer} />
-      ) : (
-        <WelcomeScreen />
-      )}
+      {player ? <GameContent player={player} /> : <WelcomeScreen />}
     </form>
   );
 }
 
-function GameContent({
-  player,
-  setPlayer,
-}: {
-  player: Player;
-  setPlayer: (player: Player) => void;
-}) {
+function GameContent({ player }: { player: Player }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
-  function handleAnswer(effect: Record<string, number>) {
+  function handleAnswer(effect: SkillEffect) {
     if (!player) return;
 
-    const updatedPlayer = new Player(player.name);
-
-    player.skills.forEach((skill) => {
-      updatedPlayer.updateSkillValue(skill.name, skill.value);
-    });
-
-    updatedPlayer.updateSkills(effect);
-
-    setPlayer(updatedPlayer);
+    player.updateSkills(effect);
 
     nextQuizQuestion();
   }
@@ -74,7 +59,10 @@ function GameContent({
       ) : (
         <div className='quiz-complete'>
           <h3>🎉 Квиз завершен! 🎉</h3>
-          <p>{player.name}, ты теперь «официально» —   {/* Финальная роль */} Ромашка</p>
+          <p>
+            {player.name}, ты теперь «официально» — {/* Финальная роль */}{" "}
+            Ромашка
+          </p>
         </div>
       )}
 
@@ -116,8 +104,8 @@ function QuizQuestion({
   value,
   handleAnswer,
 }: {
-  value: any;
-  handleAnswer: (effect: Record<string, number>) => void;
+  value: QuizQuestionClass;
+  handleAnswer: (effect: SkillEffect) => void;
 }) {
   return (
     <div className='quiz-question'>
