@@ -60,17 +60,13 @@ function GameContent({
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      console.log("Квиз завершен!", player.skills);
+      setCurrentQuestion(-1);
     }
   }
 
   return (
     <div className='game-content'>
-      <h2>Сладость или гадость, {player.name}?!</h2>
-
-      <SkillsPreview />
-
-      {currentQuestion < quizQuestions.length ? (
+      {currentQuestion !== -1 ? (
         <QuizQuestion
           value={quizQuestions[currentQuestion]}
           handleAnswer={handleAnswer}
@@ -78,10 +74,11 @@ function GameContent({
       ) : (
         <div className='quiz-complete'>
           <h3>🎉 Квиз завершен! 🎉</h3>
-          <p>Твои итоговые характеристики:</p>
-          {/* Здесь можно показать финальную роль */}
+          <p>{player.name}, ты теперь «официально» —   {/* Финальная роль */} Ромашка</p>
         </div>
       )}
+
+      <SkillsPreview player={player} />
     </div>
   );
 }
@@ -95,7 +92,7 @@ function WelcomeScreen() {
   );
 }
 
-function SkillsPreview() {
+function SkillsPreview({ player }: { player: Player }) {
   return (
     <div className='skills-preview'>
       {player.skills.map((skill) => (
